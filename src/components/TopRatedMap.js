@@ -29,7 +29,7 @@ class TopRatedMap extends React.Component {
   }
 
   render() {
-    let rated = this.state
+    let { rated } = this.props
     return <div>{this.renderPopular(rated)}</div>
   }
 }

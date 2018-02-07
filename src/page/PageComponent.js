@@ -11,11 +11,6 @@ class PageComponent extends React.Component {
     this.handleChange = this.handleChange.bind(this)
 
     this.state = {
-      nowPlaying: [],
-      popular: [],
-      topRated: [],
-      upcoming: [],
-      tvOnAir: [],
       selectValue: ''
     }
   }
@@ -111,10 +106,17 @@ class PageComponent extends React.Component {
   }
 
   render() {
-    const { popular, topRated, upcoming, tvOnAir, nowPlaying } = this.state
-    const { PopularMovies, UpcomingMovies } = this.props
+    const {
+      PopularMovies,
+      UpcomingMovies,
+      TopRatedMovies,
+      TopRatedTV,
+      NowPlayingMovies,
+      PopularTV,
+      TVOnAir
+    } = this.props
     console.log('hello from render', this.props)
-    console.log(UpcomingMovies)
+    console.log(TVOnAir)
     const style = {
       border: '1px solid black'
     }
@@ -133,7 +135,7 @@ class PageComponent extends React.Component {
           </select>
           <p style={text}>Now Playing</p>
           <div style={style}>
-            <NowPlayingMap nowPlaying={nowPlaying} />
+            <NowPlayingMap nowPlaying={NowPlayingMovies} />
           </div>
           <p style={text}>Popular</p>
           <div style={style}>
@@ -141,7 +143,7 @@ class PageComponent extends React.Component {
           </div>
           <p style={text}>Top Rated</p>
           <div style={style}>
-            <TopRatedMap topRated={topRated} />{' '}
+            <TopRatedMap topRated={TopRatedMovies} />{' '}
           </div>
           <p style={text}>Upcoming </p>
           <div style={style}>
@@ -158,15 +160,15 @@ class PageComponent extends React.Component {
           </select>
           <p style={text}>Popular</p>
           <div style={style}>
-            <PopularMap popular={popular} />{' '}
+            <PopularMap popular={PopularTV} />{' '}
           </div>
           <p style={text}>Top Rated</p>
           <div style={style}>
-            <TopRatedMap topRated={topRated} />{' '}
+            <TopRatedMap topRated={TopRatedTV} />{' '}
           </div>
           <p style={text}>TV On Air</p>
           <div style={style}>
-            <TVOnAirMap tvOnAir={tvOnAir} />
+            <TVOnAirMap tvOnAir={TVOnAir} />
           </div>
         </div>
       )

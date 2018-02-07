@@ -29,7 +29,7 @@ class NowPlayingMap extends React.Component {
   }
 
   render() {
-    let playing = this.state
+    let { playing } = this.props
     return <div>{this.renderPlaying(playing)}</div>
   }
 }

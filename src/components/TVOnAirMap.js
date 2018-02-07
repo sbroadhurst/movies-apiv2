@@ -29,8 +29,9 @@ class TVOnAirMap extends React.Component {
   }
 
   render() {
-    let playing = this.state
-    return <div>{this.renderOnAir(playing)}</div>
+    let { tvOnAir } = this.props
+    console.log('zzz', tvOnAir)
+    return <div>{this.renderOnAir(tvOnAir)}</div>
   }
 }
 export default TVOnAirMap

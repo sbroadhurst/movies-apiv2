@@ -49,7 +49,7 @@ export const setTopRatedTV = movies => {
 export const setTVOnAir = movies => {
   return {
     type: action.TV_ON_AIR,
-    payload: { TvOnAir: movies }
+    payload: { TVOnAir: movies }
   }
 }
 
@@ -89,7 +89,7 @@ let defaultState = {
   PopularMovies: [],
   TopRatedTV: [],
   PopularTV: [],
-  TvOnAir: []
+  TVOnAir: []
 }
 
 export const reducer = (state = defaultState, action) => {

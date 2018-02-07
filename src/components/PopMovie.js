@@ -10,7 +10,7 @@ class PopMovie extends React.Component {
     return (
       <div className="popmovie-list" style={{ display: 'inline' }}>
         <img
-          style={{ width: '4.5%', margin: '1px' }}
+          style={{ width: '70px', height: '100px', margin: '1px' }}
           className="popmovie"
           alt={popmovie.title}
           title={popmovie.title}
