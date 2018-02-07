@@ -1,9 +1,5 @@
 import React from 'react'
-import PopularMap from '../components/PopularMap'
-import TopRatedMap from '../components/TopRatedMap'
-import UpComingMap from '../components/UpComingMap'
-import NowPlayingMap from '../components/NowPlayingMap'
-import TVOnAirMap from '../components/TVOnAirMap'
+import Swimlane from '../components/Swimlane'
 
 class PageComponent extends React.Component {
   constructor(props) {
@@ -115,8 +111,8 @@ class PageComponent extends React.Component {
       PopularTV,
       TVOnAir
     } = this.props
-    console.log('hello from render', this.props)
-    console.log(TVOnAir)
+    // console.log('hello from render', this.props)
+    // console.log(TVOnAir)
     const style = {
       border: '1px solid black'
     }
@@ -135,19 +131,19 @@ class PageComponent extends React.Component {
           </select>
           <p style={text}>Now Playing</p>
           <div style={style}>
-            <NowPlayingMap nowPlaying={NowPlayingMovies} />
+            <Swimlane posters={NowPlayingMovies} />
           </div>
           <p style={text}>Popular</p>
           <div style={style}>
-            <PopularMap popular={PopularMovies} />{' '}
+            <Swimlane posters={PopularMovies} />{' '}
           </div>
           <p style={text}>Top Rated</p>
           <div style={style}>
-            <TopRatedMap topRated={TopRatedMovies} />{' '}
+            <Swimlane posters={TopRatedMovies} />{' '}
           </div>
           <p style={text}>Upcoming </p>
           <div style={style}>
-            <UpComingMap upcoming={UpcomingMovies} />
+            <Swimlane posters={UpcomingMovies} />
           </div>
         </div>
       )
@@ -160,15 +156,15 @@ class PageComponent extends React.Component {
           </select>
           <p style={text}>Popular</p>
           <div style={style}>
-            <PopularMap popular={PopularTV} />{' '}
+            <Swimlane posters={PopularTV} />{' '}
           </div>
           <p style={text}>Top Rated</p>
           <div style={style}>
-            <TopRatedMap topRated={TopRatedTV} />{' '}
+            <Swimlane posters={TopRatedTV} />{' '}
           </div>
           <p style={text}>TV On Air</p>
           <div style={style}>
-            <TVOnAirMap tvOnAir={TVOnAir} />
+            <Swimlane posters={TVOnAir} />
           </div>
         </div>
       )

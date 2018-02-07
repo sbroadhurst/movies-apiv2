@@ -1,7 +1,7 @@
 import React from 'react'
 import PopMovie from './PopMovie'
 
-class TopRatedMap extends React.Component {
+class Swimlane extends React.Component {
   renderPopular() {
     return (
       <div
@@ -13,7 +13,7 @@ class TopRatedMap extends React.Component {
           margin: '2%'
         }}
       >
-        {this.props.topRated.map((info, index) => {
+        {this.props.posters.map((info, index) => {
           return (
             <PopMovie
               key={index}
@@ -29,8 +29,9 @@ class TopRatedMap extends React.Component {
   }
 
   render() {
-    let { rated } = this.props
-    return <div>{this.renderPopular(rated)}</div>
+    const { map } = this.props
+    //  console.log('zzzz', popular)
+    return <div>{this.renderPopular(map)}</div>
   }
 }
-export default TopRatedMap
+export default Swimlane
