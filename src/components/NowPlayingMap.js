@@ -1,5 +1,5 @@
 import React from 'react'
-import PopMovie from './PopMovie'
+import PopMovie from '../components/PopMovie'
 
 class NowPlayingMap extends React.Component {
   renderPlaying() {

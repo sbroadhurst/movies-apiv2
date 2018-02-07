@@ -29,7 +29,8 @@ class UpComingMap extends React.Component {
   }
 
   render() {
-    let upcoming = this.state
+    const { upcoming } = this.props
+    // console.log('uuuu', upcoming)
     return <div>{this.renderPopular(upcoming)}</div>
   }
 }

@@ -29,7 +29,9 @@ class PageComponent extends React.Component {
           return res.json()
         })
         .then(res => {
-          this.props.PopularTV(res.results)
+          // console.log(res)
+          //          this.setState({ popularTv: res.results })
+          this.props.setPopularTV(res.results)
         })
       fetch(
         ' https://api.themoviedb.org/3/tv/top_rated?api_key=4d6322cf6a2b7554c7e6ffbaec593010&language=en-US&page=1'
@@ -38,7 +40,7 @@ class PageComponent extends React.Component {
           return res.json()
         })
         .then(top => {
-          this.props.TopRatedTV(top.results)
+          this.props.setTopRatedTV(top.results)
         })
       fetch(
         ' https://api.themoviedb.org/3/tv/on_the_air?api_key=4d6322cf6a2b7554c7e6ffbaec593010&language=en-US&page=1'
@@ -47,7 +49,7 @@ class PageComponent extends React.Component {
           return res.json()
         })
         .then(air => {
-          this.props.TVOnAir(air.results)
+          this.props.setTVOnAir(air.results)
         })
 
       //end of tv
@@ -58,8 +60,8 @@ class PageComponent extends React.Component {
         .then(res => {
           return res.json()
         })
-        .then(response => {
-          this.props.PopularMovies(response.results)
+        .then(res => {
+          this.props.setPopularMovies(res.results)
         })
 
       fetch(
@@ -69,7 +71,7 @@ class PageComponent extends React.Component {
           return res.json()
         })
         .then(top => {
-          this.props.TopRatedMovies(top.results)
+          this.props.setTopRatedMovies(top.results)
         })
       fetch(
         'https://api.themoviedb.org/3/movie/upcoming?api_key=4d6322cf6a2b7554c7e6ffbaec593010&language=en-US&page=1'
@@ -78,7 +80,7 @@ class PageComponent extends React.Component {
           return res.json()
         })
         .then(upcoming => {
-          this.props.UpcomingMovies(upcoming.results)
+          this.props.setUpcomingMovies(upcoming.results)
         })
       fetch(
         'https://api.themoviedb.org/3/movie/now_playing?api_key=4d6322cf6a2b7554c7e6ffbaec593010&language=en-US&page=1'
@@ -87,7 +89,7 @@ class PageComponent extends React.Component {
           return res.json()
         })
         .then(playing => {
-          this.props.NowPlayingMovies(playing.results)
+          this.props.setNowPlayingMovies(playing.results)
         })
       //end of movies
     }
@@ -110,7 +112,9 @@ class PageComponent extends React.Component {
 
   render() {
     const { popular, topRated, upcoming, tvOnAir, nowPlaying } = this.state
-    console.log('hello from render')
+    const { PopularMovies, UpcomingMovies } = this.props
+    console.log('hello from render', this.props)
+    console.log(UpcomingMovies)
     const style = {
       border: '1px solid black'
     }
@@ -133,7 +137,7 @@ class PageComponent extends React.Component {
           </div>
           <p style={text}>Popular</p>
           <div style={style}>
-            <PopularMap popular={popular} />{' '}
+            <PopularMap popular={PopularMovies} />{' '}
           </div>
           <p style={text}>Top Rated</p>
           <div style={style}>
@@ -141,7 +145,7 @@ class PageComponent extends React.Component {
           </div>
           <p style={text}>Upcoming </p>
           <div style={style}>
-            <UpComingMap upcoming={upcoming} />
+            <UpComingMap upcoming={UpcomingMovies} />
           </div>
         </div>
       )

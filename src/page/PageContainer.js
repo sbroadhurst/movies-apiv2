@@ -1,15 +1,14 @@
 import { connect } from 'react-redux'
-
 import PageComponent from './PageComponent'
 
 import {
-  NowPlayingMovies,
-  PopularMovies,
-  UpcomingMovies,
-  TopRatedMovies,
-  TVOnAir,
-  PopularTV,
-  TopRatedTV
+  setNowPlayingMovies,
+  setPopularMovies,
+  setUpcomingMovies,
+  setTopRatedMovies,
+  setTVOnAir,
+  setPopularTV,
+  setTopRatedTV
 } from '../reducers/media'
 
 const mapStatetoProps = state => {
@@ -26,26 +25,26 @@ const mapStatetoProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    NowPlayingMovies: nowPlayingMovies => {
-      dispatch(NowPlayingMovies(nowPlayingMovies))
+    setNowPlayingMovies: nowPlayingMovies => {
+      dispatch(setNowPlayingMovies(nowPlayingMovies))
     },
-    PopularMovies: popularMovies => {
-      dispatch(PopularMovies(popularMovies))
+    setPopularMovies: popularMovies => {
+      dispatch(setPopularMovies(popularMovies))
     },
-    UpcomingMovies: upcomingMovies => {
-      dispatch(UpcomingMovies(upcomingMovies))
+    setUpcomingMovies: upcomingMovies => {
+      dispatch(setUpcomingMovies(upcomingMovies))
     },
-    TopRatedMovies: topRatedMovies => {
-      dispatch(TopRatedMovies(topRatedMovies))
+    setTopRatedMovies: topRatedMovies => {
+      dispatch(setTopRatedMovies(topRatedMovies))
     },
-    PopularTV: popularTV => {
-      dispatch(PopularTV(popularTV))
+    setPopularTV: popularTV => {
+      dispatch(setPopularTV(popularTV))
     },
-    TopRatedTV: topRatedTV => {
-      dispatch(TopRatedTV(topRatedTV))
+    setTopRatedTV: topRatedTV => {
+      dispatch(setTopRatedTV(topRatedTV))
     },
-    TVOnAir: tvOnAir => {
-      dispatch(TVOnAir(tvOnAir))
+    setTVOnAir: tvOnAir => {
+      dispatch(setTVOnAir(tvOnAir))
     }
   }
 }

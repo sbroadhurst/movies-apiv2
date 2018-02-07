@@ -8,48 +8,48 @@ export const init = message => {
     payload: { message: message }
   }
 }
-export const NowPlayingMovies = movies => {
+export const setNowPlayingMovies = movies => {
   return {
     type: action.NOW_PLAYING_MOVIES,
-    payload: { nowPlayingMovies: movies }
+    payload: { NowPlayingMovies: movies }
   }
 }
 
-export const PopularMovies = movies => {
+export const setPopularMovies = movies => {
   return {
     type: action.POPULAR_MOVIES,
-    payload: { popularMovies: movies }
+    payload: { PopularMovies: movies }
   }
 }
-export const UpcomingMovies = movies => {
+export const setUpcomingMovies = movies => {
   return {
     type: action.UPCOMING_MOVIES,
-    payload: { upcomingMovies: movies }
+    payload: { UpcomingMovies: movies }
   }
 }
-export const TopRatedMovies = movies => {
+export const setTopRatedMovies = movies => {
   return {
     type: action.TOP_RATED_MOVIES,
-    payload: { topRatedMovies: movies }
+    payload: { TopRatedMovies: movies }
   }
 }
 //tv
-export const PopularTV = movies => {
+export const setPopularTV = movies => {
   return {
     type: action.POPULAR_TV,
-    payload: { popularTV: movies }
+    payload: { PopularTV: movies }
   }
 }
-export const TopRatedTV = movies => {
+export const setTopRatedTV = movies => {
   return {
     type: action.TOP_RATED_TV,
-    payload: { topRatedTV: movies }
+    payload: { TopRatedTV: movies }
   }
 }
-export const TVOnAir = movies => {
+export const setTVOnAir = movies => {
   return {
     type: action.TV_ON_AIR,
-    payload: { tvOnAir: movies }
+    payload: { TvOnAir: movies }
   }
 }
 
@@ -83,13 +83,13 @@ const ACTION_HANDLERS = {
 }
 
 let defaultState = {
-  nowPlayingMovies: [],
-  topRatedMovies: [],
-  upcomingMovies: [],
-  popularMovies: [],
-  topRatedTV: [],
-  popularTV: [],
-  tvOnAir: []
+  NowPlayingMovies: [],
+  TopRatedMovies: [],
+  UpcomingMovies: [],
+  PopularMovies: [],
+  TopRatedTV: [],
+  PopularTV: [],
+  TvOnAir: []
 }
 
 export const reducer = (state = defaultState, action) => {

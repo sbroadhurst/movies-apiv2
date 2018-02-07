@@ -29,7 +29,8 @@ class PopularMap extends React.Component {
   }
 
   render() {
-    let popular = this.state
+    const { popular } = this.props
+    //  console.log('zzzz', popular)
     return <div>{this.renderPopular(popular)}</div>
   }
 }
