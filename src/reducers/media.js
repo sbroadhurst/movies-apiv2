@@ -2,12 +2,6 @@ import * as action from './actions'
 
 //movies
 
-export const init = message => {
-  return {
-    type: action.INIT,
-    payload: { message: message }
-  }
-}
 export const setNowPlayingMovies = movies => {
   return {
     type: action.NOW_PLAYING_MOVIES,

@@ -1,5 +1,5 @@
 import React from 'react'
-import PopMovie from './PopMovie'
+import Poster from './Poster'
 
 class Swimlane extends React.Component {
   renderPopular() {
@@ -15,7 +15,7 @@ class Swimlane extends React.Component {
       >
         {this.props.posters.map((info, index) => {
           return (
-            <PopMovie
+            <Poster
               key={index}
               info={info}
               id={info.id}
