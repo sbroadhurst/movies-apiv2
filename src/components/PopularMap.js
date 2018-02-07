@@ -13,7 +13,7 @@ class PopularMap extends React.Component {
           margin: '2%'
         }}
       >
-        {this.props.popularMovies.map((info, index) => {
+        {this.props.popular.map((info, index) => {
           return (
             <PopMovie
               key={index}

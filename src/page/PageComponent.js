@@ -11,6 +11,11 @@ class PageComponent extends React.Component {
     this.handleChange = this.handleChange.bind(this)
 
     this.state = {
+      nowPlaying: [],
+      popular: [],
+      topRated: [],
+      upcoming: [],
+      tvOnAir: [],
       selectValue: ''
     }
   }

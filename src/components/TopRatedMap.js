@@ -13,7 +13,7 @@ class TopRatedMap extends React.Component {
           margin: '2%'
         }}
       >
-        {this.props.topRatedMovies.map((info, index) => {
+        {this.props.topRated.map((info, index) => {
           return (
             <PopMovie
               key={index}

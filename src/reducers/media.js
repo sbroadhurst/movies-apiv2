@@ -83,7 +83,6 @@ const ACTION_HANDLERS = {
 }
 
 let defaultState = {
-  nowPlaying: [],
   nowPlayingMovies: [],
   topRatedMovies: [],
   upcomingMovies: [],
