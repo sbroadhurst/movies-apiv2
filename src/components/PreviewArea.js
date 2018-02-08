@@ -2,9 +2,6 @@ import React from 'react'
 
 class PreviewArea extends React.Component {
   render() {
-    const { tab1 } = this.props
-
-    console.log(tab1)
     return (
       <div
         style={{
@@ -13,9 +10,12 @@ class PreviewArea extends React.Component {
           width: '55%',
           height: '40vh',
           left: '20%',
-          position: 'relative'
+          position: 'relative',
+          zIndex: '2'
         }}
-      />
+      >
+        hey this is an area{' '}
+      </div>
     )
   }
 }
