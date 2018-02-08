@@ -114,7 +114,8 @@ class PageComponent extends React.Component {
     // console.log('hello from render', this.props)
     // console.log(TVOnAir)
     const style = {
-      border: '1px solid black'
+      border: '1px solid black',
+      width: '600px'
     }
     const text = {
       border: '1px solid black',

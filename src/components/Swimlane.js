@@ -14,15 +14,16 @@ class Swimlane extends React.Component {
         }}
       >
         {this.props.posters.map((info, index) => {
-          return (
-            <Poster
-              key={index}
-              info={info}
-              id={info.id}
-
-              // select={this.props.select}
-            />
-          )
+          while (index < 8) {
+            return (
+              <Poster
+                key={index}
+                info={info}
+                id={info.id}
+                select={this.props.select}
+              />
+            )
+          }
         })}
       </div>
     )

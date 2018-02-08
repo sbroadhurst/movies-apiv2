@@ -1,7 +1,7 @@
 import React from 'react'
 import PreviewArea from './PreviewArea'
 
-class PopMovie extends React.Component {
+class Poster extends React.Component {
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this)
@@ -10,6 +10,7 @@ class PopMovie extends React.Component {
   handleClick() {
     const { id, backdrop_path, title, overview, poster_path } = this.props.info
     console.log(id, title, overview, poster_path, backdrop_path)
+    //  console.log(this.props.info)
     return (
       <PreviewArea
         id={id}
@@ -41,4 +42,4 @@ class PopMovie extends React.Component {
   }
 }
 
-export default PopMovie
+export default Poster
