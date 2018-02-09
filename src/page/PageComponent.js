@@ -1,5 +1,6 @@
 import React from 'react'
 import Swimlane from '../components/Swimlane'
+//import PreviewArea from '../components/PreviewArea'
 
 class PageComponent extends React.Component {
   constructor(props) {
@@ -113,10 +114,6 @@ class PageComponent extends React.Component {
     } = this.props
     // console.log('hello from render', this.props)
     // console.log(TVOnAir)
-    const style = {
-      border: '1px solid black',
-      width: '600px'
-    }
     const text = {
       border: '1px solid black',
       width: '100px',
@@ -131,19 +128,19 @@ class PageComponent extends React.Component {
             <option value="tv"> tv </option>
           </select>
           <p style={text}>Now Playing</p>
-          <div style={style}>
+          <div>
             <Swimlane posters={NowPlayingMovies} />
           </div>
           <p style={text}>Popular</p>
-          <div style={style}>
+          <div>
             <Swimlane posters={PopularMovies} />{' '}
           </div>
           <p style={text}>Top Rated</p>
-          <div style={style}>
+          <div>
             <Swimlane posters={TopRatedMovies} />{' '}
           </div>
           <p style={text}>Upcoming </p>
-          <div style={style}>
+          <div>
             <Swimlane posters={UpcomingMovies} />
           </div>
         </div>
@@ -156,15 +153,15 @@ class PageComponent extends React.Component {
             <option value="tv"> tv </option>
           </select>
           <p style={text}>Popular</p>
-          <div style={style}>
+          <div>
             <Swimlane posters={PopularTV} />{' '}
           </div>
           <p style={text}>Top Rated</p>
-          <div style={style}>
+          <div>
             <Swimlane posters={TopRatedTV} />{' '}
           </div>
           <p style={text}>TV On Air</p>
-          <div style={style}>
+          <div>
             <Swimlane posters={TVOnAir} />
           </div>
         </div>

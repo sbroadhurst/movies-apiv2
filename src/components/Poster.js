@@ -1,5 +1,4 @@
 import React from 'react'
-import PreviewArea from './PreviewArea'
 
 class Poster extends React.Component {
   constructor(props) {
@@ -8,19 +7,10 @@ class Poster extends React.Component {
   }
 
   handleClick() {
-    const { id, backdrop_path, title, overview, poster_path } = this.props.info
-    console.log(id, title, overview, poster_path, backdrop_path)
-    //  console.log(this.props.info)
-    return (
-      <PreviewArea
-        id={id}
-        backdrop={backdrop_path}
-        title={title}
-        overview={overview}
-        poster={poster_path}
-      />
-    )
+    this.props.select(this.props.info)
+    console.log(this.props.info)
   }
+
   render() {
     let popmovie = this.props.info
 
