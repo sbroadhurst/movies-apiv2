@@ -2,17 +2,29 @@ import React from 'react'
 import './Preview.css'
 
 class PreviewArea extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      showPreview: true
+    }
+    this.toggleClass = this.toggleClass.bind(this)
+  }
+  toggleClass() {
+    let currentState = this.state.showPreview
+    this.setState({ PreviewArea: !currentState })
+  }
+
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     let movie = this.props.movieData
     let poster = movie.poster_path
     let background = movie.backdrop_path
     let posterUrl = ' http://image.tmdb.org/t/p/w185/' + poster
     let backgroundUrl = 'http://image.tmdb.org/t/p/w500/' + background
+
     return (
       <div
         style={{
-          border: '1px solid red',
           width: '500px',
           height: '225px',
           left: '50px',

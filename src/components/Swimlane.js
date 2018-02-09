@@ -50,15 +50,20 @@ class Swimlane extends React.Component {
 
   renderPreview() {
     const { movieData } = this.state
-    return <PreviewArea onClick={this.toggleClass} movieData={movieData} />
+    if (this.state.showPreview === true) {
+      return <PreviewArea movieData={movieData} onClick={this.toggleClass} />
+    } else {
+      return null
+    }
   }
 
   toggleClass() {
-    this.setState({ PreviewArea: !this.state.PreviewArea })
+    let currentState = this.state.showPreview
+    this.setState({ PreviewArea: !currentState })
   }
 
   render() {
-    let preview = this.state.PreviewArea ? 'none' : 'blocks'
+    // let preview = this.state.PreviewArea ? 'none' : 'block'
     const { map } = this.props
     //  console.log('zzzz', popular)
     return (
@@ -66,9 +71,7 @@ class Swimlane extends React.Component {
         <div style={{ border: '1px solid black', width: '600px' }}>
           {this.renderPopular(map)}{' '}
         </div>
-        <div style={{ display: preview }} onClick={this.toggleClass}>
-          {this.renderPreview()}{' '}
-        </div>
+        <div onClick={this.toggleClass}>{this.renderPreview()} </div>
       </div>
     )
   }
