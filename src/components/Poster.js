@@ -8,7 +8,7 @@ class Poster extends React.Component {
 
   handleClick() {
     this.props.select(this.props.info)
-    console.log(this.props.info)
+    //  console.log(this.props.info)
   }
 
   render() {

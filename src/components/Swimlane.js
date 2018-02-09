@@ -58,7 +58,7 @@ class Swimlane extends React.Component {
   }
 
   render() {
-    let preview = this.state.PreviewArea ? 'none' : 'block'
+    let preview = this.state.PreviewArea ? 'none' : 'blocks'
     const { map } = this.props
     //  console.log('zzzz', popular)
     return (
