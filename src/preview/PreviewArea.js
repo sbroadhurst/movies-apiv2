@@ -94,26 +94,16 @@ class PreviewArea extends React.Component {
       <div>
         <div className="wrapper">
           <header className="header">{movie.title}{movie.name}</header>
-          <article className="main" >
-            <div className='body' >
-              <div>
-                {/* <img src={backgroundUrl} className="background" alt='background' /> */}
-                <img src={posterUrl} className="pic" alt='poster' />
-                {/* <h1 className="title"> {movie.title} </h1> */}
-                <p className="overview" alt={movie.overview} title={movie.overview}>
-                  {' '}
-                  {movie.overview}{' '}
-                </p>
-                <p className="release">
-                  {' '}
-                  <strong>Release Date: {movie.release_date}</strong>{' '}
-                </p>
-              </div>
+          <article className="main">
+            <div className='body'>
+              <p className="overview" >  {movie.overview} <br /><br />
+                <strong>Release Date: {movie.release_date}</strong>{' '} </p>
             </div>
           </article>
-          <footer className="footer"> Genres <br />{this.genreButtons(movie)} </footer>
-
-        </div >
+          <aside className="aside aside-1"> <img src={posterUrl} className="pic" alt='poster' />
+            <footer className="footer"> Genres <br />{this.genreButtons(movie)} </footer>
+          </aside>
+        </div>
         <div>
           <div className='text'>Similar {this.props.match.params.type}</div><br />
           <Swimlane posters={Similar} type={this.props.match.params.type} />
@@ -127,3 +117,34 @@ class PreviewArea extends React.Component {
 }
 
 export default PreviewArea
+
+
+// return (
+//   <div>
+//     <div className="wrapper">
+//       <header className="header">{movie.title}{movie.name}</header>
+//       <article className="main" >
+//         <div className='body' >
+//           <div>
+//             {/* <img src={backgroundUrl} className="background" alt='background' /> */}
+//             <img src={posterUrl} className="pic" alt='poster' />
+//             <h1 className="title"> {movie.title} </h1>
+//             <p className="overview" alt={movie.overview} title={movie.overview}>
+//               {' '}
+//               {movie.overview}{' '}
+//             </p>
+//             <p className="release">
+//               {' '}
+//               <strong>Release Date: {movie.release_date}</strong>{' '}
+//             </p>
+//           </div>
+//         </div>
+//       </article>
+//       <footer className="footer"> Genres <br />{this.genreButtons(movie)} </footer>
+
+//     </div >
+//     <div>
+//       <div className='text'>Similar {this.props.match.params.type}</div><br />
+//       <Swimlane posters={Similar} type={this.props.match.params.type} />
+//     </div>
+//   </div>
