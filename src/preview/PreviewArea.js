@@ -84,6 +84,7 @@ class PreviewArea extends React.Component {
     const { Similar } = this.props
     //   console.log(Similar)
     let movie = this.props.SelectedPoster
+    if (movie.release_date === undefined) { movie.release_date = 'N/A' }
     //console.log(movie)
     let poster = movie.poster_path
     let background = movie.backdrop_path
@@ -92,6 +93,7 @@ class PreviewArea extends React.Component {
     // console.log(posterUrl, backgroundUrl)
     return (
       <div>
+        {/* style={{ backgroundImage: "url(" + backgroundUrl + ")" }} */}
         <div className="wrapper">
           <header className="header">{movie.title}{movie.name}</header>
           <article className="main">
@@ -117,34 +119,3 @@ class PreviewArea extends React.Component {
 }
 
 export default PreviewArea
-
-
-// return (
-//   <div>
-//     <div className="wrapper">
-//       <header className="header">{movie.title}{movie.name}</header>
-//       <article className="main" >
-//         <div className='body' >
-//           <div>
-//             {/* <img src={backgroundUrl} className="background" alt='background' /> */}
-//             <img src={posterUrl} className="pic" alt='poster' />
-//             <h1 className="title"> {movie.title} </h1>
-//             <p className="overview" alt={movie.overview} title={movie.overview}>
-//               {' '}
-//               {movie.overview}{' '}
-//             </p>
-//             <p className="release">
-//               {' '}
-//               <strong>Release Date: {movie.release_date}</strong>{' '}
-//             </p>
-//           </div>
-//         </div>
-//       </article>
-//       <footer className="footer"> Genres <br />{this.genreButtons(movie)} </footer>
-
-//     </div >
-//     <div>
-//       <div className='text'>Similar {this.props.match.params.type}</div><br />
-//       <Swimlane posters={Similar} type={this.props.match.params.type} />
-//     </div>
-//   </div>

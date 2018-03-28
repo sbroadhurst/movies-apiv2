@@ -24,7 +24,7 @@
   }
   
   .header {
-    background: tomato;
+    /* background: tomato; */
     height: 100px;
     font-size: 2em;
   }
@@ -37,7 +37,7 @@
   
   .main {
     text-align: left;
-      background: deepskyblue; 
+      /* background: deepskyblue;  */
       justify-content: center;
   }
 
