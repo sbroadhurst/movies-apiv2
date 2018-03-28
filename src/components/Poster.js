@@ -14,8 +14,8 @@ class Poster extends React.Component {
         <Link to={{ pathname: '/info/' + type + '/' + popmovie.id }}><img
           style={{ width: '70px', height: '100px', margin: '1px' }}
           className="popmovie"
-          alt={popmovie.title}
-          title={popmovie.title}
+          alt={popmovie.title || popmovie.name}
+          title={popmovie.title || popmovie.name}
           src={url}
         /></Link>
       </div>
