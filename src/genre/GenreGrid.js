@@ -41,7 +41,7 @@ class GenreGrid extends React.Component {
         if (GenreMovies !== undefined)
             return (
                 <div>
-                    <div className='text'> {this.props.match.params.genre} Movies</div><br />
+                    <div className='main-page-text'> {this.props.match.params.genre} Movies</div><br />
                     {GenreMovies.map((info, index) => {
                         return (
                             <Poster
@@ -60,7 +60,7 @@ class GenreGrid extends React.Component {
         if (GenreTv !== undefined)
             return (
                 <div>
-                    <div className='text'>{this.props.match.params.genre} TV Shows</div><br />
+                    <div className='main-page-text'>{this.props.match.params.genre} TV Shows</div><br />
                     {GenreTv.map((info, index) => {
                         return (
                             <Poster

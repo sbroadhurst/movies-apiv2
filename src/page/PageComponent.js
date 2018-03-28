@@ -122,19 +122,19 @@ class PageComponent extends React.Component {
             <option value="movie">movie </option>
             <option value="tv"> tv </option>
           </select>
-          <p className='text'>Now Playing</p>
+          <p className='main-page-text'>Now Playing</p>
           <div>
             <Swimlane type='movie' posters={NowPlayingMovies} />
           </div>
-          <p className='text'>Popular</p>
+          <p className='main-page-text'>Popular</p>
           <div>
             <Swimlane type='movie' posters={PopularMovies} />{' '}
           </div>
-          <p className='text'>Top Rated</p>
+          <p className='main-page-text'>Top Rated</p>
           <div>
             <Swimlane type='movie' posters={TopRatedMovies} />{' '}
           </div>
-          <p className='text'>Upcoming </p>
+          <p className='main-page-text'>Upcoming </p>
           <div>
             <Swimlane type='movie' posters={UpcomingMovies} />
           </div>
@@ -147,15 +147,15 @@ class PageComponent extends React.Component {
             <option value="movie">movie </option>
             <option value="tv"> tv </option>
           </select>
-          <p className='text'>Popular</p>
+          <p className='main-page-text'>Popular</p>
           <div>
             <Swimlane type='tv' posters={PopularTV} />{' '}
           </div>
-          <p className='text'>Top Rated</p>
+          <p className='main-page-text'>Top Rated</p>
           <div>
             <Swimlane type='tv' posters={TopRatedTV} />{' '}
           </div>
-          <p className='text'>TV On Air</p>
+          <p className='main-page-text'>TV On Air</p>
           <div>
             <Swimlane type='tv' posters={TVOnAir} />
           </div>

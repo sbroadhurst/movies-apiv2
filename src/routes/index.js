@@ -3,14 +3,14 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import PageComponent from '../page/';
 import PreviewArea from '../preview';
 import GenreGrid from '../genre'
-//import Header from '../header/index'
+import Header from '../header/index'
 
 export default class Routes extends Component {
     render() {
         return (
             <Router>
                 <div>
-                    {/* <Header /> */}
+                    <Header />
                     <Switch>
                         <Route exact path="/" component={PageComponent} />
                         <Route exact path="/info/:type/:id" component={PreviewArea} />
