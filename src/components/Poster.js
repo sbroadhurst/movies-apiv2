@@ -1,32 +1,23 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 class Poster extends React.Component {
-  constructor(props) {
-    super(props)
-    this.handleClick = this.handleClick.bind(this)
-  }
-
-  handleClick() {
-    this.props.select(this.props.info)
-    //  console.log(this.props.info)
-  }
-
   render() {
     let popmovie = this.props.info
-
+    let type = this.props.select
+    //console.log(this.props)
+    // console.log(type)
     let poster = popmovie.poster_path
-    // let id = popmovie.id
     let url = ' http://image.tmdb.org/t/p/w185/' + poster
     return (
       <div className="popmovie-list" style={{ display: 'inline' }}>
-        <img
+        <Link to={{ pathname: '/info/' + type + '/' + popmovie.id }}><img
           style={{ width: '70px', height: '100px', margin: '1px' }}
           className="popmovie"
           alt={popmovie.title}
           title={popmovie.title}
           src={url}
-          onClick={this.handleClick}
-        />
+        /></Link>
       </div>
     )
   }

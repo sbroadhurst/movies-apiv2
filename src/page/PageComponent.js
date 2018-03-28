@@ -1,6 +1,6 @@
 import React from 'react'
 import Swimlane from '../components/Swimlane'
-//import PreviewArea from '../components/PreviewArea'
+import '../Boxes.css'
 
 class PageComponent extends React.Component {
   constructor(props) {
@@ -112,14 +112,9 @@ class PageComponent extends React.Component {
       PopularTV,
       TVOnAir
     } = this.props
-    // console.log('hello from render', this.props)
-    // console.log(TVOnAir)
-    const text = {
-      border: '1px solid black',
-      width: '100px',
-      padding: '10px',
-      fontWeight: 'bold'
-    }
+    //  console.log('hello from render', this.props)
+    //  console.log(PopularMovies)
+
     if (this.state.selectValue === 'movie')
       return (
         <div>
@@ -127,21 +122,21 @@ class PageComponent extends React.Component {
             <option value="movie">movie </option>
             <option value="tv"> tv </option>
           </select>
-          <p style={text}>Now Playing</p>
+          <p className='text'>Now Playing</p>
           <div>
-            <Swimlane posters={NowPlayingMovies} />
+            <Swimlane type='movie' posters={NowPlayingMovies} />
           </div>
-          <p style={text}>Popular</p>
+          <p className='text'>Popular</p>
           <div>
-            <Swimlane posters={PopularMovies} />{' '}
+            <Swimlane type='movie' posters={PopularMovies} />{' '}
           </div>
-          <p style={text}>Top Rated</p>
+          <p className='text'>Top Rated</p>
           <div>
-            <Swimlane posters={TopRatedMovies} />{' '}
+            <Swimlane type='movie' posters={TopRatedMovies} />{' '}
           </div>
-          <p style={text}>Upcoming </p>
+          <p className='text'>Upcoming </p>
           <div>
-            <Swimlane posters={UpcomingMovies} />
+            <Swimlane type='movie' posters={UpcomingMovies} />
           </div>
         </div>
       )
@@ -152,17 +147,17 @@ class PageComponent extends React.Component {
             <option value="movie">movie </option>
             <option value="tv"> tv </option>
           </select>
-          <p style={text}>Popular</p>
+          <p className='text'>Popular</p>
           <div>
-            <Swimlane posters={PopularTV} />{' '}
+            <Swimlane type='tv' posters={PopularTV} />{' '}
           </div>
-          <p style={text}>Top Rated</p>
+          <p className='text'>Top Rated</p>
           <div>
-            <Swimlane posters={TopRatedTV} />{' '}
+            <Swimlane type='tv' posters={TopRatedTV} />{' '}
           </div>
-          <p style={text}>TV On Air</p>
+          <p className='text'>TV On Air</p>
           <div>
-            <Swimlane posters={TVOnAir} />
+            <Swimlane type='tv' posters={TVOnAir} />
           </div>
         </div>
       )

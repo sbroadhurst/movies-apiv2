@@ -46,6 +46,34 @@ export const setTVOnAir = movies => {
     payload: { TVOnAir: movies }
   }
 }
+//poster
+export const setSelectedPoster = movies => {
+  return {
+    type: action.SELECTED_POSTER,
+    payload: { SelectedPoster: movies }
+  }
+}
+
+export const setSimilar = movies => {
+  return {
+    type: action.SIMILAR,
+    payload: { Similar: movies }
+  }
+}
+//GENRE SELECTED
+export const setGenreMovies = movies => {
+  return {
+    type: action.GENRE_MOVIES,
+    payload: { GenreMovies: movies }
+  }
+}
+
+export const setGenreTv = movies => {
+  return {
+    type: action.GENRE_TV,
+    payload: { GenreTv: movies }
+  }
+}
 
 const ACTION_HANDLERS = {
   [action.SET_STATE]: (state, action) => {
@@ -73,7 +101,23 @@ const ACTION_HANDLERS = {
   },
   [action.TV_ON_AIR]: (state, action) => {
     return { ...state, ...action.payload }
+  },
+  //Poster
+  [action.SELECTED_POSTER]: (state, action) => {
+    return { ...state, ...action.payload }
+  },
+  [action.SIMILAR]: (state, action) => {
+    return { ...state, ...action.payload }
+  },
+  //Genre Search
+  [action.GENRE_MOVIES]: (state, action) => {
+    return { ...state, ...action.payload }
+  },
+  [action.GENRE_TV]: (state, action) => {
+    return { ...state, ...action.payload }
   }
+
+
 }
 
 let defaultState = {
@@ -83,7 +127,11 @@ let defaultState = {
   PopularMovies: [],
   TopRatedTV: [],
   PopularTV: [],
-  TVOnAir: []
+  TVOnAir: [],
+  SelectedPoster: [],
+  Similar: [],
+  GenreTv: [],
+  GenreMovies: []
 }
 
 export const reducer = (state = defaultState, action) => {

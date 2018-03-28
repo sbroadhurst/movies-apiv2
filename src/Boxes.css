@@ -1,0 +1,144 @@
+.wrapper {
+    display: flex;  
+    flex-flow: row wrap;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .wrapper > * {
+    padding: 10px;
+    flex: 1 100%;
+  }
+
+  .desc{
+      z-index: 2;
+      opacity: 2;
+  }
+
+  .text  {
+    border: 1px solid black;
+    width: 100px;
+    padding: 10px;
+    font-weight: bold;
+  }
+  
+  .header {
+    background: tomato;
+    height: 100px;
+    font-size: 2em;
+  }
+  
+  .footer {
+   /* background: lightgreen; */
+    height: 100px;
+    color: red
+  }
+  
+  .main {
+    text-align: left;
+      background: deepskyblue; 
+      justify-content: center;
+  }
+  
+.background{
+  position: absolute;
+  opacity: .5;
+  width: 600px;
+}
+
+  .pic{
+    position: relative;
+    top: 20px;
+    left: 5%;
+  }
+
+  .title{
+    position: absolute;
+    left: 300px;
+    top: 150px;
+  }
+
+  .overview{
+    position: relative;
+    left: 300px;
+   bottom: 280px;
+    width: 50vw;
+  }
+
+  .release {
+    position: relative;
+   left: 300px;
+   top: -280px;
+  }
+  
+
+
+.popmovie{
+  width: 70px; 
+  height: 100px ;
+  transition: all .2s ease-in-out; 
+  margin: 2px;
+}
+
+.popmovie:hover{
+  transform: scale(1.2) ;
+ 
+}
+  .aside-1 {
+    height: 300px;
+    width: 300px;
+  }
+
+  .hero-image{
+    width: 290px;
+    height: 290px;
+  }
+
+  .comic-image{
+    width: 220px;
+    height: 290px;
+  }
+
+  .info{
+    float: left;
+    color: green
+  }
+  
+  @media all and (min-width: 600px) {
+    .aside { flex: 1 auto; }
+  }
+  
+  @media all and (min-width: 800px) {
+    .main    { flex: 3 0px; }
+    .aside-1 { order: 1; } 
+    .main    { order: 2; }
+    .footer  { order: 3; }
+  }
+  
+  body {
+    padding: 2em; 
+  }
+
+  .tags{
+      margin: 10px;
+  }
+
+  html, body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 1em; 
+  }
+  
+  #page-numbers {
+    list-style: none;
+    display: flex;
+  }
+  
+  #page-numbers > li {
+    margin-right: 0.3em;
+    color: blue;
+    user-select: none;
+    cursor: pointer;
+  }
+  
+  
