@@ -8,7 +8,6 @@ let oldId
 
 class PreviewArea extends React.Component {
 
-
   componentWillMount() {
     console.log('comp...')
     this.loadMedia()
@@ -82,10 +81,10 @@ class PreviewArea extends React.Component {
   render() {
     // console.log(this.props)
     const { Similar } = this.props
-    //   console.log(Similar)
+    //console.log(Similar)
     let movie = this.props.SelectedPoster
     if (movie.release_date === undefined) { movie.release_date = 'N/A' }
-    //console.log(movie)
+    console.log(movie)
     let poster = movie.poster_path
     let background = movie.backdrop_path
     let posterUrl = ' http://image.tmdb.org/t/p/w185/' + poster
