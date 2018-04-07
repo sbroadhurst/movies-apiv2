@@ -102,17 +102,15 @@ class PreviewArea extends React.Component {
             </div>
           </article>
           <aside className="aside aside-1"> <img src={posterUrl} className="pic" alt='poster' />
-            <footer className="footer"> Genres <br />{this.genreButtons(movie)} </footer>
+            <footer className="footer"> Genres <br />{this.genreButtons(movie)} <br />
+              <div>
+                <div className='main-page-text'>Similar {this.props.match.params.type}</div><br />
+                <Swimlane posters={Similar} type={this.props.match.params.type} />
+              </div>
+            </footer>
           </aside>
         </div>
-        <div>
-          <div className='text'>Similar {this.props.match.params.type}</div><br />
-          <Swimlane posters={Similar} type={this.props.match.params.type} />
-        </div>
       </div>
-
-      // return (
-      //   <div> hey </div>
     )
   }
 }

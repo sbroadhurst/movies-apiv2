@@ -74,6 +74,28 @@ export const setGenreTv = movies => {
     payload: { GenreTv: movies }
   }
 }
+//search
+export const setSearchText = movies => {
+  console.log('in here search text')
+  return {
+    type: action.SEARCH_TEXT,
+    payload: { SearchText: movies }
+  }
+}
+
+export const setSearchResultsMovies = movies => {
+  return {
+    type: action.SEARCH_RESULTS_MOVIES,
+    payload: { SearchResultsMovies: movies }
+  }
+}
+
+export const setSearchResultsTv = movies => {
+  return {
+    type: action.SEARCH_RESULTS_TV,
+    payload: { SearchResultsTv: movies }
+  }
+}
 
 const ACTION_HANDLERS = {
   [action.SET_STATE]: (state, action) => {
@@ -115,9 +137,17 @@ const ACTION_HANDLERS = {
   },
   [action.GENRE_TV]: (state, action) => {
     return { ...state, ...action.payload }
+  },
+  //Search
+  [action.SEARCH_TEXT]: (state, action) => {
+    return { ...state, ...action.payload }
+  },
+  [action.SEARCH_RESULTS_MOVIES]: (state, action) => {
+    return { ...state, ...action.payload }
+  },
+  [action.SEARCH_RESULTS_TV]: (state, action) => {
+    return { ...state, ...action.payload }
   }
-
-
 }
 
 let defaultState = {
@@ -131,7 +161,10 @@ let defaultState = {
   SelectedPoster: [],
   Similar: [],
   GenreTv: [],
-  GenreMovies: []
+  GenreMovies: [],
+  SearchText: '',
+  SearchResultsMovies: [],
+  SearchResultsTv: []
 }
 
 export const reducer = (state = defaultState, action) => {
