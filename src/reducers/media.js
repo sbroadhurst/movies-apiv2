@@ -76,7 +76,6 @@ export const setGenreTv = movies => {
 }
 //search
 export const setSearchText = movies => {
-  console.log('in here search text')
   return {
     type: action.SEARCH_TEXT,
     payload: { SearchText: movies }

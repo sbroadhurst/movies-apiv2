@@ -39,7 +39,7 @@ class SearchComponent extends React.Component {
     if (SearchResultsMovies !== undefined)
       return (
         <div>
-          <div className="main-page-text"> </div>
+          <div className="main-page-text"> Movie Results</div>
           <br />
           {SearchResultsMovies.map((info, index) => {
             return (
@@ -69,7 +69,7 @@ class SearchComponent extends React.Component {
     if (SearchResultsTv !== undefined)
       return (
         <div>
-          <div className="main-page-text"> </div>
+          <div className="main-page-text"> TV Results </div>
           <br />
           {SearchResultsTv.map((info, index) => {
             return <Poster key={index} info={info} id={info.id} select={'tv'} />
