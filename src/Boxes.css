@@ -61,16 +61,6 @@
   width: 300px;
 }
 
-.hero-image {
-  width: 290px;
-  height: 290px;
-}
-
-.comic-image {
-  width: 220px;
-  height: 290px;
-}
-
 .info {
   float: left;
   color: green;

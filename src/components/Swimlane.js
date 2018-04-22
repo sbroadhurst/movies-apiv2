@@ -4,12 +4,15 @@ import Poster from './Poster'
 import Carousel from 'nuka-carousel'
 
 class Swimlane extends React.Component {
-
   renderPopular() {
     const { posters } = this.props
     //console.log(this.props)
     return (
-      <Carousel slideWidth={'80px'} renderBottomCenterControls={false} frameOverflow='show' >
+      <Carousel
+        slideWidth={'150px'}
+        renderBottomCenterControls={false}
+        frameOverflow="show"
+      >
         {posters.map((info, index) => {
           return (
             <Poster
@@ -28,9 +31,7 @@ class Swimlane extends React.Component {
     const { map } = this.props
     return (
       <div>
-        <div>
-          {this.renderPopular(map)}{' '}
-        </div>
+        <div>{this.renderPopular(map)} </div>
       </div>
     )
   }
