@@ -10,10 +10,13 @@ class Poster extends React.Component {
     let poster = popmovie.poster_path
     let url = ' http://image.tmdb.org/t/p/w185/' + poster
     return (
-      <div className="popmovie-list" style={{ display: 'inline' }}>
+      <div
+        className="popmovie-list"
+        style={{ display: 'inline-block', width: '140px' }}
+      >
         <Link to={{ pathname: '/info/' + type + '/' + popmovie.id }}>
           <img
-            style={{ width: '130px', height: '160px', margin: '1px' }}
+            style={{ width: '130px', height: '160px', margin: '5px' }}
             className="popmovie"
             alt={popmovie.title || popmovie.name}
             title={popmovie.title || popmovie.name}
