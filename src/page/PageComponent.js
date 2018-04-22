@@ -1,6 +1,8 @@
 import React from 'react'
 import Swimlane from '../components/Swimlane'
 import '../Boxes.css'
+import DropDownMenu from 'material-ui/DropDownMenu'
+import MenuItem from 'material-ui/MenuItem'
 
 class PageComponent extends React.Component {
   constructor(props) {
@@ -8,7 +10,7 @@ class PageComponent extends React.Component {
     this.handleChange = this.handleChange.bind(this)
 
     this.state = {
-      selectValue: ''
+      value: ''
     }
   }
 
@@ -21,8 +23,6 @@ class PageComponent extends React.Component {
           return res.json()
         })
         .then(res => {
-          // console.log(res)
-          //          this.setState({ popularTv: res.results })
           this.props.setPopularTV(res.results)
         })
       fetch(
@@ -87,18 +87,13 @@ class PageComponent extends React.Component {
     }
   }
 
-  handleChange(e) {
-    this.loadMedia(e.target.value)
-    this.setState({
-      selectValue: e.target.value
-    })
-
-    // load movies or tv
-    // set movies or tv
+  handleChange = (event, index, value) => {
+    this.loadMedia(value)
+    this.setState({ value })
   }
 
   componentWillMount() {
-    this.setState({ selectValue: 'movie' })
+    this.setState({ value: 'movie' })
     this.loadMedia()
   }
 
@@ -112,52 +107,50 @@ class PageComponent extends React.Component {
       PopularTV,
       TVOnAir
     } = this.props
-    //  console.log('hello from render', this.props)
-    //  console.log(PopularMovies)
 
-    if (this.state.selectValue === 'movie')
+    if (this.state.value === 'movie')
       return (
         <div>
-          <select value={this.state.selectValue} onChange={this.handleChange}>
-            <option value="movie">movie </option>
-            <option value="tv"> tv </option>
-          </select>
-          <p className='main-page-text'>Now Playing</p>
+          <DropDownMenu value={this.state.value} onChange={this.handleChange}>
+            <MenuItem value="movie" primaryText="movie" />
+            <MenuItem value="tv" primaryText="tv" />
+          </DropDownMenu>
+          <p className="main-page-text">Now Playing</p>
           <div>
-            <Swimlane type='movie' posters={NowPlayingMovies} />
+            <Swimlane type="movie" posters={NowPlayingMovies} />
           </div>
-          <p className='main-page-text'>Popular</p>
+          <p className="main-page-text">Popular</p>
           <div>
-            <Swimlane type='movie' posters={PopularMovies} />{' '}
+            <Swimlane type="movie" posters={PopularMovies} />{' '}
           </div>
-          <p className='main-page-text'>Top Rated</p>
+          <p className="main-page-text">Top Rated</p>
           <div>
-            <Swimlane type='movie' posters={TopRatedMovies} />{' '}
+            <Swimlane type="movie" posters={TopRatedMovies} />{' '}
           </div>
-          <p className='main-page-text'>Upcoming </p>
+          <p className="main-page-text">Upcoming </p>
           <div>
-            <Swimlane type='movie' posters={UpcomingMovies} />
+            <Swimlane type="movie" posters={UpcomingMovies} />
           </div>
         </div>
       )
-    if (this.state.selectValue === 'tv')
+    if (this.state.value === 'tv')
       return (
         <div>
-          <select value={this.state.selectValue} onChange={this.handleChange}>
-            <option value="movie">movie </option>
-            <option value="tv"> tv </option>
-          </select>
-          <p className='main-page-text'>Popular</p>
+          <DropDownMenu value={this.state.value} onChange={this.handleChange}>
+            <MenuItem value="movie" primaryText="movie" />
+            <MenuItem value="tv" primaryText="tv" />
+          </DropDownMenu>
+          <p className="main-page-text">Popular</p>
           <div>
-            <Swimlane type='tv' posters={PopularTV} />{' '}
+            <Swimlane type="tv" posters={PopularTV} />{' '}
           </div>
-          <p className='main-page-text'>Top Rated</p>
+          <p className="main-page-text">Top Rated</p>
           <div>
-            <Swimlane type='tv' posters={TopRatedTV} />{' '}
+            <Swimlane type="tv" posters={TopRatedTV} />{' '}
           </div>
-          <p className='main-page-text'>TV On Air</p>
+          <p className="main-page-text">TV On Air</p>
           <div>
-            <Swimlane type='tv' posters={TVOnAir} />
+            <Swimlane type="tv" posters={TVOnAir} />
           </div>
         </div>
       )
