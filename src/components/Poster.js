@@ -23,7 +23,9 @@ class Poster extends React.Component {
             src={url}
           />
         </Link>
-        <p>{popmovie.title || popmovie.name}</p>
+        <div style={{ width: 140, height: 40, overflow: 'hidden' }}>
+          {popmovie.title || popmovie.name}
+        </div>
       </div>
     )
   }
