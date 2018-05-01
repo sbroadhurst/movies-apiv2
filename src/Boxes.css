@@ -35,6 +35,23 @@
   color: red;
 }
 
+.prev,
+.next {
+  opacity: 0;
+}
+
+.prev:hover {
+  opacity: 1;
+}
+
+.next:hover {
+  opacity: 1;
+}
+
+.prev:hover {
+  display: block;
+}
+
 .main {
   text-align: left;
   /* background: deepskyblue;  */

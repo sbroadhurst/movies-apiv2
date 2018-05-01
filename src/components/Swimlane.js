@@ -12,10 +12,14 @@ class Swimlane extends React.Component {
         slideWidth={'150px'}
         renderBottomCenterControls={() => {}}
         renderCenterLeftControls={({ previousSlide }) => (
-          <RaisedButton className="prev" onClick={previousSlide} label="PREV" />
+          <div className="prev">
+            <RaisedButton onClick={previousSlide} label="PREV" />
+          </div>
         )}
         renderCenterRightControls={({ nextSlide }) => (
-          <RaisedButton className="next" onClick={nextSlide} label="NEXT" />
+          <div className="next">
+            <RaisedButton onClick={nextSlide} label="NEXT" />
+          </div>
         )}
         frameOverflow="show"
       >
