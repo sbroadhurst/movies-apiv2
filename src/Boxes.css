@@ -3,6 +3,7 @@
   flex-flow: row wrap;
   font-weight: bold;
   text-align: center;
+  position: relative;
 }
 
 .wrapper > * {
@@ -46,16 +47,14 @@
   width: 600px;
 }
 
-.popmovie {
-  width: 70px;
-  height: 100px;
+.popmovie-list {
   transition: all 0.2s ease-in-out;
-  margin: 2px;
 }
 
-.popmovie:hover {
+.popmovie-list:hover {
   transform: scale(1.2);
 }
+
 .aside-1 {
   height: 300px;
   width: 300px;

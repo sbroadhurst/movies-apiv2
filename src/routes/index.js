@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
-import PageComponent from '../page/'
-import PreviewArea from '../preview'
-import GenreGrid from '../genre'
-import Header from '../header'
-import SearchComponent from '../search'
+import HomeComponent from './Home/'
+import PreviewArea from './Preview'
+import GenreGrid from './Genre'
+import Header from './Header'
+import SearchComponent from './Search'
 
 export default class Routes extends Component {
   render() {
@@ -13,7 +13,7 @@ export default class Routes extends Component {
         <div>
           <Header />
           <Switch>
-            <Route exact path="/" component={PageComponent} />
+            <Route exact path="/" component={HomeComponent} />
             <Route exact path="/info/:type/:id" component={PreviewArea} />
             <Route exact path="/genre/:genre/:id" component={GenreGrid} />
             <Route exact path="/search/:text" component={SearchComponent} />

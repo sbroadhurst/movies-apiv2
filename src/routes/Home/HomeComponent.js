@@ -1,10 +1,10 @@
 import React from 'react'
-import Swimlane from '../components/Swimlane'
-import '../Boxes.css'
+import Swimlane from '../../components/Swimlane'
+import '../../boxes.css'
 import DropDownMenu from 'material-ui/DropDownMenu'
 import MenuItem from 'material-ui/MenuItem'
 
-class PageComponent extends React.Component {
+class HomeComponent extends React.Component {
   constructor(props) {
     super(props)
     this.handleChange = this.handleChange.bind(this)
@@ -157,4 +157,4 @@ class PageComponent extends React.Component {
   }
 }
 
-export default PageComponent
+export default HomeComponent

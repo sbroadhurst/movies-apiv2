@@ -1,12 +1,10 @@
 import React from 'react'
 import Poster from './Poster'
-//import PreviewArea from '../preview/PreviewArea'
 import Carousel from 'nuka-carousel'
 
 class Swimlane extends React.Component {
   renderPopular() {
     const { posters } = this.props
-    //console.log(this.props)
     return (
       <Carousel
         slideWidth={'150px'}

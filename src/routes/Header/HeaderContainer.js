@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import Header from './Header'
 
-import { setSearchText } from '../reducers/media'
+import { setSearchText } from '../../reducers/media'
 
 const mapStatetoProps = state => {
   return {

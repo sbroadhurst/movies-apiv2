@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import PageComponent from './PageComponent'
+import HomeComponent from './HomeComponent'
 
 import {
   setNowPlayingMovies,
@@ -9,7 +9,7 @@ import {
   setTVOnAir,
   setPopularTV,
   setTopRatedTV
-} from '../reducers/media'
+} from '../../reducers/media'
 
 const mapStatetoProps = state => {
   return {
@@ -49,4 +49,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStatetoProps, mapDispatchToProps)(PageComponent)
+export default connect(mapStatetoProps, mapDispatchToProps)(HomeComponent)

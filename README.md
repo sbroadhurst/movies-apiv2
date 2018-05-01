@@ -2,6 +2,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+## MovieDB-APP
+
+used movie data base Api for the data requests
+used nuka-carousel for the carousels 
+used material-ui for interface elements ( dropdown menu and styles)
+made using react, react router, react redux, create-react-app
+ 
+
 
 ## Table of Contents
 

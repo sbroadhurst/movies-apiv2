@@ -1,7 +1,10 @@
 import { connect } from 'react-redux'
 import SearchComponent from './SearchComponent'
 
-import { setSearchResultsMovies, setSearchResultsTv } from '../reducers/media'
+import {
+  setSearchResultsMovies,
+  setSearchResultsTv
+} from '../../reducers/media'
 
 const mapStatetoProps = state => {
   return {

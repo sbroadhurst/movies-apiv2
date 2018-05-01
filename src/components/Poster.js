@@ -16,14 +16,22 @@ class Poster extends React.Component {
       >
         <Link to={{ pathname: '/info/' + type + '/' + popmovie.id }}>
           <img
-            style={{ width: '130px', height: '160px', margin: '5px' }}
+            style={{ width: '120.25px', height: '180.7px', margin: '5px' }}
             className="popmovie"
             alt={popmovie.title || popmovie.name}
             title={popmovie.title || popmovie.name}
             src={url}
           />
         </Link>
-        <div style={{ width: 140, height: 40, overflow: 'hidden' }}>
+        <div
+          className="title-text"
+          style={{
+            width: 120,
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis'
+          }}
+        >
           {popmovie.title || popmovie.name}
         </div>
       </div>
