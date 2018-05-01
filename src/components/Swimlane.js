@@ -8,7 +8,7 @@ class Swimlane extends React.Component {
     return (
       <Carousel
         slideWidth={'150px'}
-        renderBottomCenterControls={false}
+        renderBottomCenterControls={() => {}}
         frameOverflow="show"
       >
         {posters.map((info, index) => {
