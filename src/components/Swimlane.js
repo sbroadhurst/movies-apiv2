@@ -9,6 +9,7 @@ class Swimlane extends React.Component {
     const { posters } = this.props
     return (
       <Carousel
+        slidesToShow={2}
         slideWidth={'150px'}
         renderBottomCenterControls={() => {}}
         renderCenterLeftControls={({ previousSlide }) => (
