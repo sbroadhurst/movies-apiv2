@@ -11,17 +11,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 
-import { blue800, amber50 } from 'material-ui/styles/colors'
 import registerServiceWorker from './registerServiceWorker'
-
-const muiTheme = getMuiTheme({
-  palette: {
-    accent1Color: amber50
-  },
-  tabs: {
-    backgroundColor: blue800
-  }
-})
 
 let composeEnhancers = compose
 

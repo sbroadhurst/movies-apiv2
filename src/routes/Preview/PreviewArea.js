@@ -61,14 +61,12 @@ class PreviewArea extends React.Component {
         type +
         '/' +
         id +
-        '?api_key=4d6322cf6a2b7554c7e6ffbaec593010&language=en-US'
+        '?api_key=4d6322cf6a2b7554c7e6ffbaec593010&language=en-US&append_to_response=videos'
     )
       .then(res => {
         return res.json()
       })
       .then(res => {
-        // console.log(res)
-        //          this.setState({ popularTv: res.results })
         this.props.setSelectedPoster(res)
       })
   }
@@ -91,6 +89,26 @@ class PreviewArea extends React.Component {
       })
   }
 
+  trailer() {
+    let movie = this.props.SelectedPoster
+
+    if (movie.videos && movie.videos.results.length > 0) {
+      // console.log(movie.videos.results[0].key)
+      var trailerUrl =
+        'https://www.youtube.com/embed/' + movie.videos.results[0].key
+      return (
+        <iframe
+          width="420"
+          height="315"
+          src={trailerUrl}
+          title="trailer"
+          frameBorder="0"
+          allowFullScreen
+        />
+      )
+    } else return <div> No Trailer for selection </div>
+  }
+
   render() {
     const { Similar } = this.props
     let movie = this.props.SelectedPoster
@@ -99,7 +117,6 @@ class PreviewArea extends React.Component {
     }
     console.log(movie)
     let poster = movie.poster_path
-    // let background = movie.backdrop_path
     let posterUrl = ' http://image.tmdb.org/t/p/w185/' + poster
     //let backgroundUrl = 'http://image.tmdb.org/t/p/w780/' + background
     return (
@@ -112,12 +129,13 @@ class PreviewArea extends React.Component {
           </header>
           <article className="main">
             <div className="body">
-              <p className="overview">
+              <div className="overview">
                 {' '}
                 {movie.overview} <br />
                 <br />
-                <strong>Release Date: {movie.release_date}</strong>{' '}
-              </p>
+                <strong>Release Date: {movie.release_date}</strong> <br />
+                {this.trailer()}
+              </div>
             </div>
           </article>
           <aside className="aside aside-1">
