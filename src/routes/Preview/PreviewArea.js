@@ -148,7 +148,7 @@ class PreviewArea extends React.Component {
             </footer>
           </aside>
         </div>
-        <div style={{ paddingTop: 160 }}>
+        <div>
           <div>
             <div className="main-page-text">
               Similar {this.props.match.params.type}
